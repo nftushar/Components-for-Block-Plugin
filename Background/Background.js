@@ -29,13 +29,26 @@ const Background = props => {
 	return <PanelRow className={`bPlDropdown ${className}`}>
 		<Label className='mb5'>{label}</Label>
 
-		<Dropdown className='bPlDropdownContainer' contentClassName='bPlDropdownPopover' position='bottom right'
+		<Dropdown className='bPlDropdownContainer' contentClassName='bPlDropdownPopover' popoverProps={{ placement: 'bottom-end' }}
 			renderToggle={({ isOpen, onToggle }) => <Button icon='edit' onClick={onToggle} aria-expanded={isOpen} />}
 			renderContent={() => <>
 				{/* Type */}
 				<PanelRow>
 					<Label className=''>{__('Type:', 'bplugins')}</Label>
-					<BtnGroup value={getValue('type')} onChange={val => setValue('type', val)} options={false === isSolid ? bgTypes.filter(b => b.value !== 'solid') : false === isGradient ? bgTypes.filter(b => b.value !== 'gradient') : false === isImage ? bgTypes.filter(b => b.value !== 'image') : bgTypes} />
+					<BtnGroup value={getValue('type')} onChange={val => setValue('type', val)} options={bgTypes.filter(bgType => {
+					 
+						
+						switch (bgType.value) {
+							case 'solid':
+								return isSolid;
+							case 'gradient':
+								return isGradient;
+							case 'image':
+								return isImage;
+							default:
+								return true;
+						}
+					})} />
 				</PanelRow>
 
 				{'solid' === getValue('type') && isSolid && <BColor className='mt20' label={__('Color:', 'bplugins')} value={getValue('color')} onChange={val => setValue('color', val)} defaultColor={getDefault('color')} />}

@@ -8,12 +8,13 @@
 
 import { useEffect, useRef } from 'react';
 import { __ } from '@wordpress/i18n';
+import SelectPure from 'select-pure';
 
 import { Label } from '../index';
 import './SelectPureControl.scss';
 
 const SelectPureControl = props => {
-	const { className = '', label = '', value, onChange, options = [], SelectPure } = props;
+	const { className = '', label = '', value, onChange, options = [] } = props;
 
 	const selectPureEl = useRef(null);
 

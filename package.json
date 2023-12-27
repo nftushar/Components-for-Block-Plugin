@@ -1,0 +1,24 @@
+{
+	"name": "components",
+	"version": "1.0.0",
+	"description": "Custom Components for the Blocks",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/bPlugins-LLC/block-components.git"
+	},
+	"author": "Wasek Bellah",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/bPlugins-LLC/block-components/issues"
+	},
+	"homepage": "https://github.com/bPlugins-LLC/block-components#readme",
+	"dependencies": {
+		"immer": "^10.0.3",
+		"react-sortable-hoc": "^2.0.0",
+		"select-pure": "^0.6.3"
+	}
+}

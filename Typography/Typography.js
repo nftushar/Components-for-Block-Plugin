@@ -9,6 +9,7 @@
 import { useState } from 'react';
 import { __ } from '@wordpress/i18n';
 import { Button, Dropdown, PanelRow, SelectControl, __experimentalUnitControl as UnitControl, RangeControl, ToggleControl } from '@wordpress/components';
+import { produce } from 'immer';
 
 import './Typography.scss';
 import { Label, BDevice, BtnGroup } from '../index';
@@ -17,7 +18,7 @@ import fontLists from './fontLists';
 import { fontStyles, textTransforms, textDecorations } from './options';
 
 const Typography = props => {
-	const { className = '', label = __('Typography:', 'bplugins'), value, onChange, defaults = {}, isFamily = true, produce } = props;
+	const { className = '', label = __('Typography:', 'bplugins'), value, onChange, defaults = {}, isFamily = true } = props;
 
 	const defaultVal = { fontFamily: 'Default', fontCategory: 'sans-serif', fontWeight: 400, isUploadFont: true, fontSize: { desktop: 15, tablet: 15, mobile: 15 }, fontStyle: 'normal', textTransform: 'none', textDecoration: 'auto', lineHeight: '135%', letterSpace: '0px' }
 
@@ -56,7 +57,7 @@ const Typography = props => {
 	return <PanelRow className={`bPlDropdown ${className}`}>
 		<Label className=''>{label}</Label>
 
-		<Dropdown className='bPlDropdownContainer' contentClassName='bPlDropdownPopover' position='bottom right'
+		<Dropdown className='bPlDropdownContainer' contentClassName='bPlDropdownPopover' popoverProps={{ placement: 'bottom-end' }}
 			renderToggle={({ isOpen, onToggle }) => <Button icon='admin-customizer' onClick={onToggle} aria-expanded={isOpen} />}
 			renderContent={() => <>
 				{/* Font Family & Weight */}

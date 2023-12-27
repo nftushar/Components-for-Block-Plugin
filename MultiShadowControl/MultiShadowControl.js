@@ -10,13 +10,13 @@
 import { useState } from 'react';
 import { __ } from '@wordpress/i18n';
 import { Dropdown, PanelRow, ToggleControl, __experimentalUnitControl as UnitControl, Button, Dashicon } from '@wordpress/components';
-
+import { produce } from 'immer';
 import { Label, BColor, BtnGroup } from '../index';
 import { pxUnit, emUnit, remUnit } from '../utils/options';
 import { gearIcon } from '../utils/icons';
 
 const MultiShadowControl = props => {
-	const { className = '', label = __('Shadow', 'bplugins'), value, onChange, type = 'box', defaults = [], produce } = props;
+	const { className = '', label = __('Shadow', 'bplugins'), value, onChange, type = 'box', defaults = [] } = props;
 
 	const [activeIndex, setActiveIndex] = useState(0);
 
@@ -55,7 +55,7 @@ const MultiShadowControl = props => {
 	return <PanelRow className={`bPlDropdown ${className}`}>
 		<Label className='mt5'>{label}</Label>
 
-		<Dropdown className='bPlDropdownContainer' contentClassName='bPlDropdownPopover' position='bottom right'
+		<Dropdown className='bPlDropdownContainer' contentClassName='bPlDropdownPopover' popoverProps={{ placement: 'bottom-end' }}
 			renderToggle={({ isOpen, onToggle }) => <Button icon='edit' onClick={() => { onToggle(), setActiveIndex(0) }} aria-expanded={isOpen} />}
 			renderContent={() => <>
 				{1 < shadow.length && <PanelRow>

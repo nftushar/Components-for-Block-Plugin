@@ -22,7 +22,7 @@ const ColorControl = props => {
 	return <PanelRow className={className}>
 		<Label className=''>{label}</Label>
 
-		<Dropdown className='bPlDropdownContainer bPlColor' contentClassName='bPlDropdownPopover bPlColorPopover' position='top center'
+		<Dropdown className='bPlDropdownContainer bPlColor' contentClassName='bPlDropdownPopover bPlColorPopover' popoverProps={{ placement: 'top-end' }}
 			renderToggle={({ isOpen, onToggle }) => <>
 				<div className='bPlColorButtonContainer'>
 					<button className='bPlColorButton' isPrimary onClick={onToggle} aria-expanded={isOpen} style={{ backgroundColor: value || 'transparent' }} />

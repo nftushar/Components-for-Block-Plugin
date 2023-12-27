@@ -27,7 +27,7 @@ const ColorsControl = props => {
 	return <PanelRow className={`bPlDropdown ${className}`}>
 		<Label className=''>{label} <ColorIndicator colorValue={getValue('color')} /> <ColorIndicator colorValue={getValue('gradient' === getValue('bgType') ? 'gradient' : 'bg')} /></Label>
 
-		<Dropdown className='bPlDropdownContainer' contentClassName='bPlDropdownPopover' position='bottom right'
+		<Dropdown className='bPlDropdownContainer' contentClassName='bPlDropdownPopover' popoverProps={{ placement: 'bottom-end' }}
 			renderToggle={({ isOpen, onToggle }) => <Button icon='edit' onClick={onToggle} aria-expanded={isOpen} />}
 			renderContent={() => <>
 				<BColor label={__('Color:', 'bplugins')} value={getValue('color')} onChange={val => setValue('color', val)} defaultColor={getDefault('color')} />

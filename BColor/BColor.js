@@ -24,7 +24,7 @@ const BColor = props => {
 	return <PanelRow className={className}>
 		<Label className=''>{label}</Label>
 
-		<Dropdown className='bPlDropdownContainer bColor' contentClassName='bPlDropdownPopover bColorDropdownPopover' position='top right'
+		<Dropdown className='bPlDropdownContainer bColor' contentClassName='bPlDropdownPopover bColorDropdownPopover' popoverProps={{ placement: 'top-end' }}
 			renderToggle={({ isOpen, onToggle }) => {
 				return <>
 					<div className='bColorButtonContainer'>

@@ -29,13 +29,11 @@ Add an attribute in `block.json` file.
 ### Settings.js
 
 ```jsx
-import produce from 'immer';
-
 import { Typography } from '../../Components';
 
 const { typography } = attributes;
 
-return <Typography label={__('Label', 'text-domain')} value={typography} onChange={val => setAttributes({ typography: val })} defaults={{ fontSize: 16 }} produce={produce} />
+return <Typography label={__('Label', 'text-domain')} value={typography} onChange={val => setAttributes({ typography: val })} defaults={{ fontSize: 16 }} />
 ```
 
 More props in [Options](#options).
@@ -190,12 +188,3 @@ If don't want to use font family, set it to `false`.
 
 - Type: `Boolean`
 - Required: No
-
-<br />
-
-### produce
-
-This component using produce function from immer.
-
-- Type: `Function`
-- Required: Yes

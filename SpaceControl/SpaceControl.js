@@ -75,13 +75,13 @@ const SpaceControl = props => {
 			<Label className=''>{label}</Label>
 
 			<ButtonGroup className={`bPlBtnGroup`}>
-				<Tooltip text={__('Vertical, Horizontal', 'bplugins')} position='top'>
+				<Tooltip text={__('Vertical, Horizontal', 'bplugins')} placement='top' position='top'>
 					<Button className='side2' isSmall={true} isMedium={false} isPrimary={2 === getValue('side')} aria-pressed={2 === getValue('side')} onClick={() => onChange({ ...value, ['side']: 2, ['vertical']: `${(getIntVal('top') + getIntVal('bottom')) / 2}px`, ['horizontal']: `${(getIntVal('left') + getIntVal('right')) / 2}px` })}>
 						<span className='scrollIcon'>{scrollIcon}</span>
 						<span className='sideScrollIcon'>{scrollIcon}</span>
 					</Button>
 				</Tooltip>
-				<Tooltip text={__('Top, Right, Bottom, Left', 'bplugins')} position='top'>
+				<Tooltip text={__('Top, Right, Bottom, Left', 'bplugins')} placement='top' position='top'>
 					<Button isSmall={true} isMedium={false} isPrimary={4 === getValue('side')} aria-pressed={4 === getValue('side')} onClick={() => onChange({ ...value, ['side']: 4, ['top']: getValue('vertical'), ['right']: getValue('horizontal'), ['bottom']: getValue('vertical'), ['left']: getValue('horizontal') })}>
 						<Dashicon icon='arrow-up-alt' />
 						<Dashicon icon='arrow-right-alt' />

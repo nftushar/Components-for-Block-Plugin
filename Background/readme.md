@@ -1,6 +1,4 @@
-# Background
-
-Background is used to set element background(solid, gradient, and image).
+# BackgroundThe background is used to set the element background(solid, gradient, and image).
 
 
 ## Table of contents
@@ -13,7 +11,7 @@ Background is used to set element background(solid, gradient, and image).
 ## Usage
 
 ### block.json
-Add an attribute in `block.json` file.
+Add an attribute in the `block.json` file.
 
 ```json
 "background": {
@@ -94,7 +92,7 @@ extract( $attributes );
 ob_start(); ?>
 <style>
 	selector{
-		<php echo esc_html( getBackgroundCSS( $background ) ); ?>
+		<?php echo esc_html( getBackgroundCSS( $background ) ); ?>
 	}
 </style>
 <?php return ob_get_clean();

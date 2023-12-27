@@ -95,7 +95,7 @@ extract( $attributes );
 ob_start(); ?>
 <style>
 	selector{
-		<php echo esc_html( getBackgroundCSS( $background ) ); ?>
+		<php echo esc_html( getBorderCSS( $border ) ); ?>
 	}
 </style>
 <?php return ob_get_clean();
